@@ -33,4 +33,12 @@ class houseController extends Controller
 
         return view('welcome', ['house' => $house, 'pic' => $pic]);
     }
+
+    public function update(){
+        // $command = 'F: cd F:\python_demo\demo call python house.py';
+        shell_exec('getHousePY.bat');
+        // shell_exec($command);
+        // $command = 'F: cd F:\python_demo\demo call python getHouseImg.py';
+        // shell_exec($command);
+    }
 }

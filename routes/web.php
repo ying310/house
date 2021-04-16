@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/stock', 'stockController@index');
+// Route::get('/stock', 'stockController@index');
 
-Route::get('/house', 'houseController@index');
+Route::get('/', 'houseController@index');
+// Route::get('/house/update', 'houseController@update');
