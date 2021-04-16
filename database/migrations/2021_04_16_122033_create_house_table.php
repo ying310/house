@@ -19,8 +19,8 @@ class CreateHouseTable extends Migration
             $table->string('price');
             $table->string('house_title');
             $table->text('house_address');
-            $table->integer('house_is_img');
-            $table->integer('house_is_del');
+            $table->integer('house_is_img')->default(0);
+            $table->integer('house_is_del')->default(0);
             $table->timestamps();
         });
     }

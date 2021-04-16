@@ -17,7 +17,7 @@ class CreateHouseImgTable extends Migration
             $table->id();
             $table->integer('house_id');
             $table->string('house_img_name');
-            $table->string('house_img_ext');
+            $table->string('house_img_ext')->default('jpg');
             $table->timestamps();
         });
     }
