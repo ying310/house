@@ -9,22 +9,20 @@ use Illuminate\Support\Facades\DB;
 class houseController extends Controller
 {
     public function index(){
-        $test = DB::table('test')->get();
-        $house = array();
-        $pic = array();
+        // $test = DB::table('test')->get();
         // $db = DB::connection('mysql');
-        // $house = DB::table('house')
-        //         ->where('house_is_del', '=', 0)
-        //         ->where('house_is_img', '=', 1)
-        //         ->orderBy('house_id', 'desc')
-        //         ->paginate(5);
+        $house = DB::table('house')
+                ->where('house_is_del', '=', 0)
+                ->where('house_is_img', '=', 1)
+                ->orderBy('house_id', 'desc')
+                ->paginate(5);
 
-        // $temp = DB::table('house_img')->get();
+        $temp = DB::table('house_img')->get();
 
-        // $pic = array();
-        // foreach($temp as $key => $value){
-        //     $pic[$value->house_id][] = $value->house_img_name;
-        // }
+        $pic = array();
+        foreach($temp as $key => $value){
+            $pic[$value->house_id][] = $value->house_img_name;
+        }
 
         return view('welcome', ['house' => $house, 'pic' => $pic]);
     }
