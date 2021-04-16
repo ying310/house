@@ -13,7 +13,7 @@ class houseController extends Controller
         // $db = DB::connection('mysql');
         $house = DB::table('house')
                 ->where('house_is_del', '=', 0)
-                ->where('house_is_img', '=', 0)
+                ->where('house_is_img', '=', 1)
                 ->orderBy('id', 'desc')
                 ->paginate(5);
 
