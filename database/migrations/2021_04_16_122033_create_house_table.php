@@ -18,7 +18,7 @@ class CreateHouseTable extends Migration
             $table->string('house_591_id');
             $table->string('price');
             $table->string('house_title');
-            $table->text('house_address');
+            $table->text('house_address')->nullable();
             $table->integer('house_is_img')->default(0);
             $table->integer('house_is_del')->default(0);
             $table->timestamps();
