@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class houseController extends Controller
 {
     public function index(){
-        $test = DB::table('test')-get();
+        $test = DB::table('test')->get();
         $house = array();
         $pic = array();
         // $db = DB::connection('mysql');
