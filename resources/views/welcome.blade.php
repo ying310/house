@@ -34,8 +34,8 @@
                             <td>{{ $val->house_address }}</td>
                             <td><a href="https://rent.591.com.tw/rent-detail-{{ $val->house_591_id }}.html">https://rent.591.com.tw/rent-detail-{{ $val->house_591_id }}.html</a></td>
                             <td>
-                            @isset($pic[$val->house_id])
-                                @foreach($pic[$val->house_id] as $v)
+                            @isset($pic[$val->id])
+                                @foreach($pic[$val->id] as $v)
                                     <img src="/pic/{{$v}}" width="300" height="200"/>
                                 @endforeach
                             @endisset
