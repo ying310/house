@@ -36,7 +36,7 @@ class houseController extends Controller
         $file=scandir($filedir);
         if(isset($file[2]) && $file[2]){
             $filepath = str_replace('/var/www/house', '', $file[2]);
-            return Response::download('mp4.'.$filepath, $file[2]);
+            return Response::download('mp4/'.$filepath, $file[2]);
         }else{
             print_r('No song');
         }
