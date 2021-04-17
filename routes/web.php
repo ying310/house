@@ -20,4 +20,5 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/stock', 'stockController@index');
 
 Route::get('/', 'houseController@index');
-// Route::get('/house/update', 'houseController@update');
+Route::get('/avgle', 'avgleController@index');
+Route::get('/avgle/form/{id}', 'avgleController@form');
