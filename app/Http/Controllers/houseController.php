@@ -36,7 +36,7 @@ class houseController extends Controller
         $url = $request->input('url');
         print_r($url);
         // $url = 'https://www.youtube.com/watch?v=JhIan9zvuyE';
-        $a = shell_exec('python3 youtube.py '.$url);
+        $a = exec('python3 youtube.py '.$url);
         print_r($a);
         // sleep(5);
         // $filedir = public_path()."/mp4";
