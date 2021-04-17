@@ -34,19 +34,16 @@ class houseController extends Controller
 
     public function youtubedownload(Request $request){
         $url = $request->input('url');
-        print_r($url);
-        // $url = 'https://www.youtube.com/watch?v=JhIan9zvuyE';
-        $a = exec('python3 youtube.py '.$url);
-        print_r($a);
-        // sleep(5);
-        // $filedir = public_path()."/mp4";
-        // $file=scandir($filedir);
-        // if(isset($file[2]) && $file[2]){
-        //     $filepath = str_replace('/var/www/house', '', $file[2]);
-        //     return Response::download('mp4/'.$filepath, $file[2]);
-        // }else{
-        //     print_r('No song');
-        // }
+        exec('python3 youtube.py '.$url);
+        sleep(5);
+        $filedir = public_path()."/mp4";
+        $file=scandir($filedir);
+        if(isset($file[2]) && $file[2]){
+            $filepath = str_replace('/var/www/house', '', $file[2]);
+            return Response::download('mp4/'.$filepath, $file[2]);
+        }else{
+            print_r('No song');
+        }
     }
 
 }
