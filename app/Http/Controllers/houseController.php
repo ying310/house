@@ -31,17 +31,14 @@ class houseController extends Controller
     public function testdownload(){
         $url = 'https://www.youtube.com/watch?v=JhIan9zvuyE';
         shell_exec('python3 youtube.py '.$url);
-        // print_r('5秒後下載');
         sleep(5);
         $filedir = public_path()."/mp4";
         $file=scandir($filedir);
         if(isset($file[2]) && $file[2]){
             // $filepath = str_replace('/var/www/house', '', $file[2]);
-            // print_r($filepath);
             return Response::download($file[2], $file[2]);
         }else{
             print_r('No song');
-            // redirect('/');
         }
     }
 
