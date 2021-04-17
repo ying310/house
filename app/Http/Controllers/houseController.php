@@ -37,7 +37,7 @@ class houseController extends Controller
         $file=scandir($filedir);
         if(isset($file[2]) && $file[2]){
             // return Response::download($filedir.'/'.$file[2], $file[2]);
-            print_r($filedir.'/'.$file[2]);
+            print_r($file[2]);
         }else{
             print_r('123');
             // redirect('/');
