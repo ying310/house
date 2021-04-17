@@ -36,7 +36,8 @@ class houseController extends Controller
         $filedir = public_path()."/mp4";
         $file=scandir($filedir);
         if(isset($file[2]) && $file[2]){
-            return Response::download($filedir.'/'.$file[2], $file[2]);
+            // return Response::download($filedir.'/'.$file[2], $file[2]);
+            print($filedir.'/'.$file[2]);
         }else{
             redirect('/');
         }
