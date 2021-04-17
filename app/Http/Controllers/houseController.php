@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-// use DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Response;
 
 class houseController extends Controller
 {
@@ -27,11 +28,18 @@ class houseController extends Controller
         return view('welcome', ['house' => $house, 'pic' => $pic]);
     }
 
-    public function update(){
-        // $command = 'F: cd F:\python_demo\demo call python house.py';
-        shell_exec('getHousePY.bat');
-        // shell_exec($command);
-        // $command = 'F: cd F:\python_demo\demo call python getHouseImg.py';
-        // shell_exec($command);
+    public function music(){
+        $url = 'https://www.youtube.com/watch?v=JhIan9zvuyE';
+        shell_exec('python3 youtube.py '.$url);
+        print_r('5秒後下載');
+        sleep(5);
+        $filedir = public_path()."/mp4";
+        $file=scandir($filedir);
+        if(isset($file[2]) && $file[2]){
+            return Response::download($file[2], $file[2]);
+        }else{
+            redirect('/');
+        }
     }
+
 }
