@@ -38,7 +38,7 @@ class houseController extends Controller
         if(isset($file[2]) && $file[2]){
             $filepath = str_replace('/var/www/house', '', $file[2]);
             // print_r($filepath);
-            return Response::download('/mp4/'.$filepath, $filepath);
+            return Response::download('mp4/'.$filepath, $filepath);
         }else{
             print_r('No song');
             // redirect('/');
