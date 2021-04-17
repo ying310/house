@@ -34,6 +34,7 @@ class houseController extends Controller
 
     public function youtubedownload(Request $request){
         $url = $request->input('url');
+        print_r($url);
         // $url = 'https://www.youtube.com/watch?v=JhIan9zvuyE';
         $a = shell_exec('python3 youtube.py '.$url);
         print_r($a);
