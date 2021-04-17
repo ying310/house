@@ -28,7 +28,7 @@ class houseController extends Controller
         return view('welcome', ['house' => $house, 'pic' => $pic]);
     }
 
-    public function musicdownload(){
+    public function testdownload(){
         $url = 'https://www.youtube.com/watch?v=JhIan9zvuyE';
         print_r($url);
         // shell_exec('python3 youtube.py '.$url);
