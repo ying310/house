@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/stock', 'stockController@index');
 
-Route::get('/', 'houseController@testdownload');
+Route::get('/', 'houseController@index');
 Route::get('/testdownload', 'houseController@testdownload');
 Route::get('/avgle', 'avgleController@index');
 Route::get('/avgle/form/{id}', 'avgleController@form');
