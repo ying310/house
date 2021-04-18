@@ -44,6 +44,7 @@
                     return false;
                 }
                 if(type==0){
+                    document.getElementById('type').value = 0;
                     actform.submit();
                 }else{
                     document.getElementById('type').value = 1;
