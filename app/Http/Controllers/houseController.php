@@ -37,7 +37,9 @@ class houseController extends Controller
         // exec('python3 youtube.py '.$url);
         // $command = escapeshellcmd('/var/www/house/public/youtube.py https://www.youtube.com/watch?v=xBRvgHJ3M9M');
         // $command = escapeshellcmd('');
-        shell_exec('python3 /home/g410411310/youtube.py 2>&1');
+        // shell_exec('python3 /home/g410411310/youtube.py 2>&1');
+        echo exec('whoami') . "<br>";
+        echo exec("ls -l /home/g410411310/youtube.py") . "<br>";
         // sleep(5);
         // $filedir = public_path()."/mp4";
         // $file=scandir($filedir);
