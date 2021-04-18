@@ -40,6 +40,9 @@ class houseController extends Controller
         exec(('python3 /var/www/house/public/youtube.py '.$url));
         sleep(5);
         $filedir = public_path()."/mp4";
+        if(!is_dir($filedir)){
+            return redirect('/');
+        }
         $file=scandir($filedir);
         if(isset($file[2]) && $file[2]){
             $filepath = str_replace('/var/www/house', '', $file[2]);
