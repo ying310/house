@@ -33,11 +33,11 @@ class houseController extends Controller
     }
 
     public function youtubedownload(Request $request){
-        $url = $request->input('url');
+        // $url = $request->input('url');
         // exec('python3 youtube.py '.$url);
         // $command = escapeshellcmd('/var/www/house/public/youtube.py https://www.youtube.com/watch?v=xBRvgHJ3M9M');
-        $command = escapeshellcmd('cd /var/www/house/public/mp4 && pytube https://www.youtube.com/watch?v=zPeMFCDPgKE');
-        $output = shell_exec($command);
+        // $command = escapeshellcmd('');
+        $output = shell_exec('cd /var/www/house/public/mp4 && pytube https://www.youtube.com/watch?v=zPeMFCDPgKE');
         echo $output;
         // sleep(5);
         // $filedir = public_path()."/mp4";
