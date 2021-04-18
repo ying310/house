@@ -16,11 +16,16 @@
         <div class="flex-center position-ref full-height">
             <div class="content text-center">
                 <form method="get" action="/youtubedownload">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label for="">網址</label>
-                            <input class="form-controls" name="url" type="text" placeholder="請輸入youtube網址" />
-                            <input class="btn btn-success" type="submit" value="送出" />
+                    <div class="form-group row"><h1 class="col-md-12"><i class="bi bi-align-bottom"></i>下載Youtube Mp4</h1></div>
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <label>網址</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input class="form-control" name="url" type="text" placeholder="請輸入youtube網址" autocomplete="off"/>
+                        </div>
+                        <div class="col-md-2">
+                            <input class="form-control btn btn-success" type="submit" value="送出" />
                         </div>
                     </div>
                 </form>
