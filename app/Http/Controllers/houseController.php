@@ -34,8 +34,12 @@ class houseController extends Controller
 
     public function youtubedownload(Request $request){
         $url = $request->input('url');
+        $type = $request->input('type');
         if(is_dir("/var/www/house/public/mp4")){
             exec('rm -rf /var/www/house/public/mp4');
+        }
+        if(is_dir("/var/www/house/public/mp3")){
+            exec('rm -rf /var/www/house/public/mp3');
         }
         exec(('python3 /var/www/house/public/youtube.py '.$url));
         sleep(5);
@@ -45,8 +49,23 @@ class houseController extends Controller
         }
         $file=scandir($filedir);
         if(isset($file[2]) && $file[2]){
-            $filepath = str_replace('/var/www/house', '', $file[2]);
-            return Response::download('mp4/'.$filepath, $file[2]);
+            if($type){
+                // mp3
+                exec('python3 changemp3.py');
+                $mp3filedir = public_path()."/mp3";
+                if(!is_dir($mp3filedir)){
+                    return redirect('/');
+                }
+                $mp3file=scandir($mp3filedir);
+                if(isset($mp3file[2]) && $mp3file[2]){
+                    $filepath = str_replace('/var/www/house', '', $file[2]);
+                    return Response::download('mp3/'.$filepath, $file[2]);
+                }
+            }else{
+                // mp4
+                $filepath = str_replace('/var/www/house', '', $file[2]);
+                return Response::download('mp4/'.$filepath, $file[2]);
+            }
         }else{
             return redirect('/');
         }

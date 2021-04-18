@@ -15,21 +15,41 @@
     <body>
         <div class="flex-center position-ref full-height">
             <div class="content text-center">
-                <form method="get" action="/youtubedownload">
+                <form method="get" action="/youtubedownload" id="actform">
+                    <input type="hidden" name="type" value="0" id="type">
                     <div class="form-group row"><h1 class="col-md-12"><i class="bi bi-align-bottom"></i>下載Youtube Mp4</h1></div>
                     <div class="form-group row">
                         <div class="col-md-3">
                             <label>網址</label>
                         </div>
                         <div class="col-md-6">
-                            <input class="form-control" name="url" type="text" placeholder="請輸入youtube網址" autocomplete="off"/>
+                            <input class="form-control" id="url" name="url" type="text" placeholder="請輸入youtube網址" autocomplete="off"/>
                         </div>
                         <div class="col-md-2">
-                            <input class="form-control btn btn-success" type="submit" value="送出" />
+                            <input class="btn btn-success" type="button" onclick="mySubmit(0)" value="下載mp4" />
+                            <input class="btn btn-success" type="button" onclick="mySubmit(1)" value="下載mp3" />
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+        <script>
+            function mySubmit(type){
+                var a = document.getElementById('url').value;
+                var actform = document.getElementById('actform');
+                if(a){
+
+                }else{
+                    alert('請輸入網址');
+                    return false;
+                }
+                if(type==0){
+                    actform.submit();
+                }else{
+                    document.getElementById('type').value = 1;
+                    actform.submit();
+                }
+            }
+        </script>
     </body>
 </html>
