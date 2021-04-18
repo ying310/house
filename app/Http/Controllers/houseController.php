@@ -58,8 +58,8 @@ class houseController extends Controller
                 }
                 $mp3file=scandir($mp3filedir);
                 if(isset($mp3file[2]) && $mp3file[2]){
-                    $filepath = str_replace('/var/www/house', '', $file[2]);
-                    return Response::download('mp3/'.$filepath, $file[2]);
+                    $filepath = str_replace('/var/www/house', '', $mp3file[2]);
+                    return Response::download('mp3/'.$filepath, $mp3file[2]);
                 }
             }else{
                 // mp4
