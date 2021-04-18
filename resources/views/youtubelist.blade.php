@@ -15,6 +15,11 @@
     <body>
         <div class="flex-center position-ref full-height">
             <div class="content text-center">
+                <div class="row text-left">
+                    <div class="col-sm-12">
+                        <a href="/" class="btn btn-success">首頁</a>
+                    </div>
+                </div>
                 <form method="get" action="/youtubedownload" id="actform">
                     <input type="hidden" name="type" value="0" id="type">
                     <div class="form-group row"><h1 class="col-md-12"><i class="bi bi-align-bottom"></i>下載Youtube Mp4</h1></div>

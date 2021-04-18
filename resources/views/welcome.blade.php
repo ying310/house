@@ -23,6 +23,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <a href="/update" class="btn btn-primary">更新</a>
+                        <a href="/youtubelist" class="btn btn-danger">Youtube Download</a>
                     </div>
                 </div>
                 <br/>
