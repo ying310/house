@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Session;
 
 class houseController extends Controller
 {
@@ -26,6 +27,14 @@ class houseController extends Controller
         }
 
         return view('welcome', ['house' => $house, 'pic' => $pic]);
+    }
+
+    public function update(){
+        exec('python3 house.py');
+        sleep(2);
+        exec('python3 getHouseImg.py');
+        Session::flash('status', '更新成功');
+        return redirect('/');
     }
 
     public function youtubelist(){

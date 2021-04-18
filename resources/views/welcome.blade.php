@@ -15,10 +15,18 @@
     <body>
         <div class="flex-center position-ref full-height">
             <div class="content">
-                <!-- <div class="title m-b-md">
-                    Laravel
-                </div> -->
-                    {{ $house->links() }}
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a href="/update" class="btn btn-primary">更新</a>
+                    </div>
+                </div>
+                <br/>
+                {{ $house->links() }}
                 <table class="table table-hover table-bordered order-table text-center" style="margin-bottom: 0;overflow-x: auto">
                      <tr>
                         <th>名稱</th>

@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/stock', 'stockController@index');
 
 Route::get('/', 'houseController@index');
+Route::get('/update', 'houseController@update');
 Route::get('/youtubelist', 'houseController@youtubelist');
 Route::get('/youtubedownload', 'houseController@youtubedownload');
 Route::get('/avgle', 'avgleController@index');
