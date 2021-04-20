@@ -33,7 +33,7 @@ class houseController extends Controller
         // exec('python3 /var/www/house/public/house.py');
         // sleep(2);
         // exec('python3 /var/www/house/public/getHouseImg.py');
-        exec('sudo python3 /var/www/house/public/getHouseImg.py 2>&1', $result, $out);
+        exec('python3 /var/www/house/public/getHouseImg.py 2>&1', $result, $out);
         print_r($result);
         echo '<br/>';
         print_r($out);
