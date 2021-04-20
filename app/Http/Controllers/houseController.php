@@ -37,6 +37,7 @@ class houseController extends Controller
         print_r($result);
         echo '<br/>';
         print_r($out);
+        exit;
         Session::flash('status', '更新成功');
         return redirect('/');
     }
