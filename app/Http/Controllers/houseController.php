@@ -32,9 +32,12 @@ class houseController extends Controller
     public function update(){
         // exec('python3 /var/www/house/public/house.py 2>&1', $result, $out);
         // sleep(2);
-        exec('python3 /var/www/house/public/getHouseImg.py');
-        Session::flash('status', '更新成功');
-        return redirect('/');
+        exec('python3 /var/www/house/public/getHouseImg.py', $reuslt, $out);
+        print_r($result);
+        echo '<br/>';
+        print_r($out);
+        // Session::flash('status', '更新成功');
+        // return redirect('/');
     }
 
     public function youtubelist(){
