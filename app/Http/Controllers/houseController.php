@@ -31,8 +31,8 @@ class houseController extends Controller
 
     public function update(){
         exec('python3 /var/www/house/public/house.py');
-        sleep(2);
-        exec('python3 /var/www/house/public/getHouseImg.py');
+        // sleep(2);
+        // exec('python3 /var/www/house/public/getHouseImg.py');
         Session::flash('status', '更新成功');
         return redirect('/');
     }
