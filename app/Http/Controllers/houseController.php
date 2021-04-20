@@ -30,10 +30,10 @@ class houseController extends Controller
     }
 
     public function update(){
-        // exec('python3 /var/www/house/public/house.py 2>&1', $result, $out);
+        // exec('python3 /var/www/house/public/house.py');
         // sleep(2);
         // exec('python3 /var/www/house/public/getHouseImg.py');
-        exec('python3 /var/www/house/public/getHouseImg.py 2>&1', $result, $out);
+        exec('sudo python3 /var/www/house/public/getHouseImg.py 2>&1', $result, $out);
         print_r($result);
         echo '<br/>';
         print_r($out);
