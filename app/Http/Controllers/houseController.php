@@ -30,11 +30,11 @@ class houseController extends Controller
     }
 
     public function update(){
-        exec('python3 /var/www/house/public/house.py');
+        exec('python3 /var/www/house/public/house.py 2>&1');
         // sleep(2);
         // exec('python3 /var/www/house/public/getHouseImg.py');
-        Session::flash('status', '更新成功');
-        return redirect('/');
+        // Session::flash('status', '更新成功');
+        // return redirect('/');
     }
 
     public function youtubelist(){
